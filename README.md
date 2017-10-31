@@ -11,9 +11,11 @@ ShpConverter是用来将shapefile文件转换为对应的GeoJSON格式的字符�
 + 支持将点、多点、线、多线、以及面图层转换为GeoJSON。
 
 ### 使用方法
-```IFeatureSet fs = FeatureSet.Open(shpPath);  
+```
+IFeatureSet fs = FeatureSet.Open(shpPath);  
 IShpConverter shpConverter = new ConverterToJson();  
-string geoJson = shpConverter.GetGeoJson(fs);```
+string geoJson = shpConverter.GetGeoJson(fs);
+```
 
 ### 注意事项
 ShpConverter仅用来将shapefile文件转换为GeoJSON格式，适合于GIS开发者或者与GIS相关的项目开发使用。
