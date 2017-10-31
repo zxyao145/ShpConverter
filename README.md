@@ -20,9 +20,6 @@ string geoJson = shpConverter.GetGeoJson(fs);
 ### 注意事项
 ShpConverter仅用来将shapefile文件转换为GeoJSON格式，适合于GIS开发者或者与GIS相关的项目开发使用。
 
-### TODO
-对多面图层转换为GeoJSON的支持。
-
 ### 开发者
 zhaiguang，zhaiguang145@gmail.com
 
