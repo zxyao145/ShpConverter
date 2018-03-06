@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShpConverter</name>
+    </assembly>
+    <members>
+        <member name="T:ShpConverter.GeoJSONOper.CoordinatesOper.Coord1">
+            <summary>
+            一维坐标集合，针对单个点
+            </summary>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.CoordinatesOper.Coord2">
+            <summary>
+            二维数组，针对多点、线
+            </summary>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.CoordinatesOper.Coord2.GetCoords(DotSpatial.Data.IFeature)">
+            <summary>
+            获取一条直线的坐标点
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.CoordinatesOper.Coord2.GetClosedCoords(DotSpatial.Data.IFeature)">
+            <summary>
+            获取一条闭合线环的坐标点
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.CoordinatesOper.Coord3">
+            <summary>
+            三维的数组，针对多线和面
+            </summary>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.CoordinatesOper.Coord3.GetCoords(DotSpatial.Data.IFeature)">
+            <summary>
+            获取多线的坐标点
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.CoordinatesOper.Coord3.GetClosedCoords(DotSpatial.Data.IFeature)">
+            <summary>
+            获取面的坐标点
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.CoordinatesOper.Coord3.GetLinesCoords(System.String)">
+            <summary>
+            获取带有洞的复杂面的线点
+            </summary>
+            <param name="geometryStr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.FeatureCollection">
+            <summary>
+            shapefile对应的GeoJSON实体类，对shapefile而言，其对应的根GeoJSON类型就是FeatureCollection(特征集合对象)
+            </summary>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.FeatureGeoJson">
+            <summary>
+            shapefile中每个Feature对应的GeoJSON实体类，包括Feature类型、几何类型和属性信息
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.FeatureGeoJson.Type">
+            <summary>
+            GeoJSON类型，
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.FeatureGeoJson.GeometryGeoJson">
+            <summary>
+            shapefile中每个Feature对应的几何类型的geojson，包括一个几何类型和空间坐标点
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.FeatureGeoJson.Properties">
+            <summary>
+             属性信息
+            </summary>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.GeoJSON">
+            <summary>
+            shapefile对应的GeoJSON实体类
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.GeoJSON.Type">
+            <summary>
+            GeoJSON的类型，对应根属性而言为FeatureCollection
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.GeoJSON.Features">
+            <summary>
+            shapefile中的feature对应的GeoJSON实体类的几何
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.GeoJSON.Bbox">
+            <summary>
+            边界框数组
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.GeoJSON.Empty">
+            <summary>
+            返回空的FeatureCollection
+            </summary>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.GeoJSONType">
+            <summary>
+            GeoJSON对应的类型
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.Unspecified">
+            <summary>
+            类型不在GeoJSON规定的类型中
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.Point">
+            <summary>
+            点
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.MultiPoint">
+            <summary>
+            多点
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.LineString">
+            <summary>
+            线
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.MultiLineString">
+            <summary>
+            多线
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.Polygon">
+            <summary>
+            面
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.MultiPolygon">
+            <summary>
+            多面
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.GeometryCollection">
+            <summary>
+            GeometryCollection
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.Feature">
+            <summary>
+            特征对象
+            </summary>
+        </member>
+        <member name="F:ShpConverter.GeoJSONOper.GeoJSONType.FeatureCollection">
+            <summary>
+            特征集合对象
+            </summary>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.GeometryGeoJson">
+            <summary>
+            shapefile中每个Feature对应的几何类型实体类，包括一个几何类型和空间坐标点
+            </summary>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.GeometryGeoJson.#ctor">
+            <summary>
+            本构造函数是为了适应与Jil类库进行序列化。如果使用此构造函数，需要在创建实例后制定Type的类型，否则默认的Type为GeoJSONType.Point。
+            </summary>
+        </member>
+        <member name="M:ShpConverter.GeoJSONOper.GeometryGeoJson.#ctor(ShpConverter.GeoJSONOper.GeoJSONType)">
+            <summary>
+            创建GeometryGeoJson对象，并对Type进行赋值
+            </summary>
+            <param name="type"></param>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.GeometryGeoJson.Type">
+            <summary>
+            GeoJSON的类型，对于shapefile中种几何对象，有种，包括点、多点、线、多线、面
+            </summary>
+        </member>
+        <member name="P:ShpConverter.GeoJSONOper.GeometryGeoJson.Coordinates">
+            <summary>
+            坐标点
+            </summary>
+        </member>
+        <member name="T:ShpConverter.GeoJSONOper.ToGeoJson">
+            <summary>
+            将shapefile转成GeoJSON的具体类
+            </summary>
+        </member>
+        <member name="M:ShpConverter.DotSpatialExtension.GetBbox(DotSpatial.Data.IFeatureSet)">
+            <summary>
+            获取shapefile的边界信息
+            </summary>
+            <param name="fs">shapefile对应的IFeatureSet对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:ShpConverter.DotSpatialExtension.GetPropertieJson(DotSpatial.Data.IFeature)">
+            <summary>
+            获取当前这一个feature的propertie对象
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShpConverter.DotSpatialExtension.GetGeoJsonType(DotSpatial.Data.IFeature)">
+            <summary>
+            获取IFeature对应的GeoJSON类型
+            </summary>
+            <param name="feature"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ShpConverter.DotSpatialExtension.GetCoordinates(DotSpatial.Data.IFeature,ShpConverter.GeoJSONOper.GeoJSONType)">
+            <summary>
+            获取几何对象的坐标点信息
+            </summary>
+            <param name="feature"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ShpConverter.ShpConvertException">
+            <summary>
+            ShpConvert异常
+            </summary>
+        </member>
+        <member name="M:ShpConverter.ShpConvertException.#ctor">
+            <summary>
+            初始化ShpConvert的异常类新实例。
+            </summary>
+        </member>
+        <member name="M:ShpConverter.ShpConvertException.#ctor(System.String)">
+            <summary>
+            初始化ShpConvert的异常类新实例，并带有指定错误消息。
+            </summary>
+            <param name="message">描述错误的信息</param>
+        </member>
+        <member name="M:ShpConverter.ShpConvertException.#ctor(System.String,System.Exception)">
+            <summary>
+            初始化ShpConvert的异常类新实例，并带有指定错误消息和对内部异常的引用。
+            </summary>
+            <param name="message">描述错误的信息</param>
+            <param name="innerException">内部异常</param>
+        </member>
+        <member name="T:ShpConverter.ShpConvert">
+            <summary>
+            shapefile文件转换器
+            </summary>
+        </member>
+        <member name="M:ShpConverter.ShpConvert.#ctor(DotSpatial.Data.IFeatureSet)">
+            <summary>
+            通过shapefile对应的IFeatureSet对象，创建一个ShpConvert实例
+            </summary>
+            <param name="fs">shapefile对应的IFeatureSet对象</param>
+        </member>
+        <member name="M:ShpConverter.ShpConvert.#ctor">
+            <summary>
+            创建一个ShpConvert实例
+            </summary>
+        </member>
+        <member name="P:ShpConverter.ShpConvert.Fs">
+            <summary>
+            shapefile对应的IFeatureSet对象
+            </summary>
+        </member>
+        <member name="M:ShpConverter.ShpConvert.ToGeoJSON">
+            <summary>
+            将shapefile文件转为GeoJSON，目前仅支持WGS84坐标系
+            </summary>
+            <returns>GeoJSON字符串</returns>
+        </member>
+        <member name="T:ShpConverter.IShpConvert">
+            <summary>
+            shapefile文件转换器的借口
+            </summary>
+        </member>
+        <member name="M:ShpConverter.IShpConvert.ToGeoJSON">
+            <summary>
+            将shapefile文件转为GeoJSON，目前仅支持WGS84坐标系
+            </summary>
+            <returns>GeoJSON字符串</returns>
+        </member>
+    </members>
+</doc>
