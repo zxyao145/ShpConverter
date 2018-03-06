@@ -8,7 +8,7 @@ ShpConverter是用来将shapefile文件转换为对应的GeoJSON格式的字符�
 + 基于.Net Framework 4.5
 + 目前版本为 v2.0.0.0
 + 基于开源类库 DotSpatial v1.9 和 Jil 而开发。
-+ 支持将点、多点、线、多线、以及面图层转换为GeoJSON。
++ 支持将点、多点、线、多线、以及面shapefile图层转换为GeoJSON。
 
 ### 更新信息
 重构了全部代码，修改了些bug（感谢道友“芥末油”）。
