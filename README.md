@@ -26,7 +26,7 @@ string geoJson = shpConvert.ToGeoJSON();
 + ShpConverter仅支持WGS84地理坐标系
 
 ### 开发者
-zhaiguang
+zxyao145
 
 ### 许可协议
 有关许可条款的更多信息，请参阅LICENSE.txt。
